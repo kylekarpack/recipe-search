@@ -26,14 +26,17 @@ class RecipeRouter {
         //const filter = parser.parse(query || "");
         const mongoQuery = odataToMongo.createQuery(query);
         const fullQuery = parser.filter(req.params.$filter || "");
-        let recipes = await db.searchRecipes(mongoQuery);
-        res.json({
-            query: mongoQuery,
-            fullQuery: fullQuery,
-            results: recipes
-        });
-        console.log("asunk");
-        return;
+        try {
+            let recipes = await db.searchRecipes(mongoQuery);
+            res.json({
+                query: mongoQuery,
+                fullQuery: fullQuery,
+                results: recipes
+            });
+        }
+        catch (e) {
+            res.json(e);
+        }
     }
     // Attach router to express endpoints
     init() {
