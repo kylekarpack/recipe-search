@@ -1,0 +1,19 @@
+{
+  "name": "recipe-downloader",
+  "version": "0.0.1",
+  "description": "Download ",
+  "main": "index.js",
+  "author": "Kyle & Kristin",
+  "dependencies": {
+    "body-parser": "latest",
+    "cheerio": "latest",
+    "express": "latest",
+    "keen-ui": "^1.0.0",
+    "mongodb": "^2.2.24",
+    "odata-parser": "^1.4.1",
+    "odata-v4-mongodb": "^0.1.10",
+    "odata-v4-parser": "^0.1.18",
+    "request": "latest",
+    "simple-odata-server": "^0.3.1"
+  }
+}
